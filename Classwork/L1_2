@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class second {
+    public static void main (String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введи цифру, чтобы посчитать объем: 1 - параллелепипед, 2 - шар, 3 - цилиндр");
+        int v = sc.nextInt();
+        switch(v) {
+            case 1:
+                System.out.println("Введите длину первой стороны:");
+                int first_side = sc.nextInt();
+                System.out.println("Введите длину второй стороны:");
+                int second_side = sc.nextInt();
+                System.out.println("Введите длину высоты:");
+                int high = sc.nextInt();
+                System.out.println("Объем параллелепипеда: " + first_side * second_side * high);
+                break;
+            case 2:
+                System.out.println("Введите радиус шара:");
+                int radius = sc.nextInt();
+                System.out.println("Объем шара: " + 4.0 / 3 * Math.PI * Math.pow(radius, 3));
+                break;
+            case 3:
+                System.out.println("Введите радиус основания цилиндра:");
+                int radius_с = sc.nextInt();
+                System.out.println("Введите высоту цилиндра:");
+                int high_c = sc.nextInt();
+                System.out.println("Объем цилиндра: " + Math.PI * Math.pow(radius_с, 2) * high_c);
+            default:
+                System.out.println("Ошибка кода... перезагрузка системы");
+        }
+    }
+}
