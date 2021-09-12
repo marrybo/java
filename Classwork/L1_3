@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class L1_3 {
+    public static void main (String args[]){
+        Scanner scan = new Scanner(System.in);
+        double left=-2.3;
+        double right=3.14;
+        System.out.println("Введите число через запятую, если оно вещественное:");
+        double numb=scan.nextDouble();
+        if(numb>=left && numb<=right){
+            System.out.println("Ваше число входит в промежуток");
+        }else {
+            System.out.println("Ваше число не входит в промежуток");
+        }
+    }
+}
