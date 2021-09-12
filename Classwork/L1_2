@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class second {
+public class L1_2 {
     public static void main (String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.println("Введи цифру, чтобы посчитать объем: 1 - параллелепипед, 2 - шар, 3 - цилиндр");
