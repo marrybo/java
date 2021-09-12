@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class L1_4 {
+    public static void main (String args[]){
+        double left=-2.3;
+        double right=3.14;
+        while (true) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Хотите ли узнать, попадает ли число в промежуток?");
+            System.out.println("y/n");
+            String ans = scan.nextLine();
+            switch (ans) {
+                case "y": {
+                    System.out.println("Введите число через запятую, если оно вещественное:");
+                    double numb = scan.nextDouble();
+                    if (numb >= left && numb <= right) {
+                        System.out.println("Ваше число входит в промежуток");
+                    } else {
+                        System.out.println("Ваше число не входит в промежуток");
+                    }
+                    break;
+                }
+                case "n": {
+                    return;
+                    }
+                default: {
+                    System.out.println("Ошибка кода... перезагрузка системы");
+                    break;
+                }
+            }
+        }
+    }
+}
