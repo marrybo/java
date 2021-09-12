@@ -1,0 +1,9 @@
+public class L1_1 {
+    public static void main (String args[]){
+        String a = "2";
+        int new_a=Integer.parseInt(a);
+        double n_a=Double.parseDouble(a);
+        double sum=new_a+n_a;
+        System.out.println(new_a+"+"+n_a+"="+sum);
+    }
+}
