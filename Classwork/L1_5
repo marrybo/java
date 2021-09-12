@@ -1,0 +1,16 @@
+public class L1_5 {
+    public static void main (String args[]) {
+        int[] firstArray  = {1,2,3};
+        int[] secondArray = {3,2,1};
+        for (int i=0;i<firstArray.length;i++) {
+            if (firstArray[i]>secondArray[i]){
+                System.out.println((i+1)+"-ое число из firstArray больше");
+            }else if(firstArray[i]==secondArray[i]){
+                System.out.println((i+1)+"-ые числа равны");
+            }else {
+                System.out.println((i+1)+"-ое число из secondArray больше");
+            }
+        }
+
+    }
+}
