@@ -2,32 +2,27 @@ import java.util.Scanner;
 
 public class L1_4 {
     public static void main (String args[]){
-        double left=-2.3;
-        double right=3.14;
-        while (true) {
+        double left=Math.random();
+        double right=Math.random();
+        String ans = "y";
+        do{
             Scanner scan = new Scanner(System.in);
+            if (left>right){
+                double max=left;
+                left=right;
+                right=max;
+            }
+            System.out.println("Эта программа показывает, входит ли введенное вами число в промежуток ["+left+";"+right+"]");
+            System.out.println("Введите число (и если оно вещественное, то используйте запятую):");
+            double numb = scan.nextDouble();
+            if (numb >= left && numb <= right) {
+                System.out.println("Ваше число входит в промежуток");
+            } else {
+                System.out.println("Ваше число не входит в промежуток");
+            }
             System.out.println("Хотите ли узнать, попадает ли число в промежуток?");
             System.out.println("y/n");
-            String ans = scan.nextLine();
-            switch (ans) {
-                case "y": {
-                    System.out.println("Введите число через запятую, если оно вещественное:");
-                    double numb = scan.nextDouble();
-                    if (numb >= left && numb <= right) {
-                        System.out.println("Ваше число входит в промежуток");
-                    } else {
-                        System.out.println("Ваше число не входит в промежуток");
-                    }
-                    break;
-                }
-                case "n": {
-                    return;
-                    }
-                default: {
-                    System.out.println("Ошибка кода... перезагрузка системы");
-                    break;
-                }
-            }
-        }
+            ans = scan.next();
+        }while (!ans.equals("n"));
+        System.out.println("Программа завершена...");
     }
-}
