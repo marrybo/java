@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class HW_L1_2 {
+    public static void main (String args[]) {
+        Scanner scan = new Scanner(System.in);
+        String[] arr = new String[]{
+                "H",
+                "E",
+                "L",
+                "L",
+                "O",
+        };
+        System.out.println("Введите букву, чтобы узнать, входит ли она в массив: ");
+        String a = scan.next();
+        int sum = 0;
+        for (String s : arr ) {
+            if (s.equals(a)) {
+                sum++;
+            }
+        }
+        String text = sum==0? " не " : " ";
+        System.out.println(a+text+"в массиве");
+    }
+
+}
