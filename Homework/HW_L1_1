@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class HW_L1_1 {
+    public static void main (String args[]){
+        Scanner sc = new Scanner(System.in);
+        String ans = "";
+        do{
+            System.out.println("Введите действие над числами: ");
+            System.out.println("* + / -");
+            String operator = sc.next();
+                switch (operator) {
+                    case "*": {
+                        System.out.println("Введите 2 числа:");
+                        int a = sc.nextInt();
+                        int b = sc.nextInt();
+                        System.out.println("Произведение: " + a + " * " + b + " = " + (a * b));
+                        break;
+                    }
+                    case "+": {
+                        System.out.println("Введите 2 числа:");
+                        int c = sc.nextInt();
+                        int d = sc.nextInt();
+                        System.out.println("Сумма: " + c + " + " + d + " = " + (c + d));
+                        break;
+                    }
+                    case "/": {
+                        System.out.println("Введите 2 числа:");
+                        String e = sc.nextLine();
+                        String f = sc.nextLine();
+                        System.out.println("Частное: " + e + " / " + f + " = " + Double.parseDouble(e) / Double.parseDouble(f));
+                        break;
+                    }
+                    case "-": {
+                        System.out.println("Введите 2 числа:");
+                        int i = sc.nextInt();
+                        int j = sc.nextInt();
+                        System.out.println("Разность: " + i + " - " + j + " = " + (i - j));
+                        break;
+                    }
+                    default: {
+                        System.out.println("Ошибка кода... перезагрузка системы");
+                        break;
+                    }
+                }
+            System.out.println("Хотите ли продолжить вычисления?");
+            System.out.println("y/n");
+            ans = sc.next();
+        }while (!ans.equals("n"));
+        System.out.println("Калькулятор отключен...");
+    }
+}
