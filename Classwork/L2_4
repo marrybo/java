@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class Cylinder {
+     void sumSqrI(int radius_сi, int high_ci){
+        double ri= radius_сi;
+        double hi= high_ci;
+        System.out.println("Площадь поверхности: "+(2*Math.PI*ri*hi+2*Math.PI*Math.pow(ri,2)));
+    }
+     void volumeI(int radius_сi, int high_ci){
+        double ri= radius_сi;
+        double hi= high_ci;
+        System.out.println("Объем цилиндра: " + Math.PI * Math.pow(ri, 2) * hi);
+    }
+    public static void sumSqrD(double radius_сd, double high_cd){
+        System.out.println("Площадь поверхности: "+(2*Math.PI*radius_сd*high_cd+2*Math.PI*Math.pow(radius_сd,2)));
+    }
+    static void volumeD(double radius_сd, double high_cd){
+        System.out.println("Объем цилиндра: " + Math.PI * Math.pow(radius_сd, 2) * high_cd);
+    }
+    void volumeS(String radius_сs, String high_cs){
+        double rs= Double.parseDouble(radius_сs);
+        double hs= Double.parseDouble(high_cs);
+        System.out.println("Объем цилиндра: " + Math.PI * Math.pow(rs, 2) * hs);
+    }
+    void sumSqrS(String radius_сs, String high_cs){
+        double rs= Double.parseDouble(radius_сs);
+        double hs= Double.parseDouble(high_cs);
+        System.out.println("Площадь поверхности: "+(2*Math.PI*rs*hs+2*Math.PI*Math.pow(rs,2)));
+    }
+
+}
+class NewMain {
+    public void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите тип переменных\nInteger -> (1) Double -> (2) String -> (3) ");
+        int ans=sc.nextInt();
+        switch (ans) {
+            case 1:
+                System.out.println("Введите a:");
+                int radius_ci = sc.nextInt();
+                System.out.println("Введите b:");
+                int high_ci = sc.nextInt();
+                Cylinder sqrcyl1 = new Cylinder.sumSqrI(radius_ci,high_ci);
+                Cylinder volumecyl1 = new Cylinder.volumeI(radius_ci,high_ci);
+                System.out.println("Площадь поверхности: "+sqrcyl1+"\nОбьем: "+volumecyl1);
+                break;
+            case 2:
+                System.out.println("Введите a:");
+                double radius_cd = sc.nextDouble();
+                System.out.println("Введите b:");
+                double high_cd = sc.nextDouble();
+                Cylinder sqrcyl2 = new Cylinder.sumSqrD(radius_cd,high_cd);
+                Cylinder volumecyl2 = new Cylinder.volumeD(radius_cd,high_cd);
+                System.out.println("Площадь поверхности: "+sqrcyl2+"\nОбьем: "+volumecyl2);
+                break;
+            case 3:
+                System.out.println("Введите a:");
+                String radius_cs = sc.next();
+                System.out.println("Введите b:");
+                String high_cs = sc.next();
+                Cylinder sqrcyl3 = new Cylinder.sumSqrS(radius_cs,high_cs);
+                Cylinder volumecyl3 = new Cylinder.volumeS(radius_cs,high_cs);
+                System.out.println("Площадь поверхности: "+sqrcyl3+"\nОбьем: "+volumecyl3);
+                break;
+        }
+    }
+}
