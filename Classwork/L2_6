@@ -1,0 +1,26 @@
+public class L2_6 {
+    static class NetworkInfo{
+        private String ssid;
+        private String passwd;
+        private String securityType;
+
+
+        public void showParameters(){
+            System.out.println("SSID: "+ssid+"\nPassword: "+passwd+"\nSecurity type: "+this.securityType);
+        }
+
+    }
+
+    public static NetworkInfo add(String ss, String pa, String se){
+        NetworkInfo ni = new NetworkInfo();
+        ni.ssid = ss;
+        ni.passwd = pa;
+        ni.securityType =se;
+        return ni;
+    }
+
+    public static void main(String[] args) {
+        NetworkInfo ni = add("1","1","1");
+        ni.showParameters();
+    }
+}
