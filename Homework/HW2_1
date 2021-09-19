@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class HW2_1 {
+    public class Car{
+        private String model;
+        private double speed=0;
+        private double weight=0;
+
+        public static void Car(String m, double s, double w){
+            this.model=m;
+            this.weight=w;
+            this.speed=s;
+        }
+
+        public void show() {
+            System.out.println("Модель: " + model);
+            if (speed != 0) {
+                System.out.println("Скорость: " + speed);
+            }
+            if (weight != 0) {
+                System.out.println("Длинна: " + weight);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String i="";
+        String m;
+        double qs;
+        double s = 0;
+        double qw;
+        double w = 0;
+        Car car;
+        do{
+            System.out.println("Модель: ");
+            String model =sc.next();
+            System.out.println("Скорость есть? \n (y/n) : ");
+            double qs= sc.nextDouble();
+            if (!"n".equals(qs)){
+                s = sc.nextDouble();
+            }
+            System.out.println("Длинна есть? \n (y/n) : ");
+            double qw= sc.nextDouble();
+            if ("y".equals(qw)){
+                w = sc.nextDouble();
+            }
+            if ("y".equals(qs) & "y".equals(qw)){
+                car = new Car(model, s, w);
+            }else if ("y".equals(qs)){
+                car = new Car(model, s);
+            }else if ("y".equals(qw)){
+                car = new Car(model, w);
+            }else{
+                car = new Car(model);
+            }
+            car.show();
+
+            System.out.println("Хотите продолжить? \n(y/n): ");
+            i=sc.next();
+        }while(!i.equals("n"));
+    }
+}
