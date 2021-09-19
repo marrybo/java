@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+public class HW2_3{
+    class Animals {
+
+    }
+     class Pets extends Animals{
+        public void eat(){
+            System.out.println("feeding the animal...");
+        }
+        public void sleep(){
+            System.out.println("zzz...");
+        }
+        public void runAway(){
+            System.out.println("Byy!");
+        }
+    }
+     class Cat extends Pets {
+        private String name = "Barsic";
+        private int years = 5;
+        private String hunger = "isn't hunger";
+        private String tire = "isn't tired";
+    }
+     class Dog extends Pets {
+        private String name = "Sam";
+        private int years = 1;
+        private String hunger = "is hunger";
+        private String tire = "isn't tired";
+    }
+     class Birds extends Animals {
+
+    }
+     class Parrot extends Birds{
+        private String name;
+        private int years;
+        private String hunger = "isn't hunger";
+        private String tire = "is tired";
+    }
+     class Horses extends Animals{
+
+    }
+     class Luca extends Horses{
+        private String name = "Luca";
+        private int years = 20;
+        private String hunger = "is hunger";
+        private String tire = "is tired";
+    }
+    public double setName(String name){
+        this.name = name;
+    }
+    public double setYear(int years){
+        this.years = years;
+    }
+    public double setYear(String hunger){
+        this.hunger= hunger;
+    }
+    public double setYear(String tire) {
+        this.tire = tire;
+    }
+     public double getName(String name){
+        return name;
+    }
+    public double getYear(int years){
+        return years;
+    }
+    public double getYear(String hunger){
+        return hunger;
+    }
+    public double getYear(String tire) {
+        return tire;
+    }
+
+    class New {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            if ("is hunger".equals(hunger.getHunger(an))){
+                an.eat();
+            }else if ("is tired".equals(tire.getHunger(an))){
+                an.sleep();
+            }else {
+                an.runAway();
+            }
+        }
+    }
+    public static Animals add(String name1, int year1, String hunger1, String tire1){
+        Animals an = new Animals();
+        an.name = name1;
+        an.year = year1;
+        an.hunger =hunger1;
+        an.tire =hunger1;
+        return an;
+    }
+}
