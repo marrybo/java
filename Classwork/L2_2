@@ -1,0 +1,68 @@
+import java.util.Scanner;
+class Roots {
+    private double x1;
+    private double x2;
+    private int count;
+
+    public void setX1(double x1){
+        this.x1 = x1;
+    }
+
+    public void setX2(double x2){
+        this.x2 = x2;
+    }
+
+    public void setCount(int count){
+        this.count = count;
+    }
+
+    public double getX1() {
+        return x1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите a:");
+        double a = sc.nextDouble();
+        System.out.println("Введите b:");
+        double b = sc.nextDouble();
+        System.out.println("Введите c:");
+        double c = sc.nextDouble();
+
+        Roots r = getRoots(a, b, c);
+
+        switch (r.getCount()) {
+            case 0 -> System.out.println("Нет решений");
+            case 1 -> System.out.println("Корень: x = " + r.getX1());
+            case 2 -> System.out.println("Корни: x1 = " + r.getX1() + "; x2 = " + r.getX2());
+        }
+
+    }
+
+    public static Roots getRoots(double a, double b, double c) {
+        Roots r = new Roots();
+        double D = Math.pow(b, 2) - 4 * a * c;
+        if (D < 0) {
+            r.setCount(0);
+        } else if (D == 0) {
+            r.setX1(-b / 2 * a);
+            r.setCount(1);
+        } else {
+            r.setX1((-b + Math.sqrt(D)) / 2 * a);
+            r.setX2((-b - Math.sqrt(D)) / 2 * a);
+            r.setCount(2);
+        }
+
+        return r;
+    }
+}
