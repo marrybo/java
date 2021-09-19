@@ -1,0 +1,80 @@
+import java.util.Scanner;
+        class Circle {
+            private double x;
+            private double y;
+            public double r;
+
+            public Circle(double xi, double yi, double ri) {
+                this.x = xi;
+                this.y = yi;
+                this.r = ri;
+            }
+
+            public void print() {
+                System.out.println("координаты: " + x + y + "\n" + "радиус: " + r);
+            }
+
+            public void move(double dx, double dy) {
+                x+=dx;
+                y+=dy;
+            }
+
+            public double distToOtherCircle(Circle c) {
+                return Math.sqrt(Math.pow(Math.abs(x-c.x),2)+Math.pow(Math.abs(y-c.y),2))-r-c.r;
+            }
+
+            public void changeRadius(double rn) {
+                r=rn;
+            }
+
+            public double getPerimeter() {
+                return 2*Math.PI*r;
+            }
+
+            public  double getSqr() {
+                return Math.PI*Math.pow(r,2);
+            }
+        }
+class New_class {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the coordinates of the center of the circle:\nx: ");
+        double x = in.nextDouble();
+        System.out.print("y: ");
+        double y = in.nextDouble();
+        System.out.print("Enter the radius: ");
+        double r = in.nextDouble();
+
+        Circle c = new Circle(x, y, r);
+
+        System.out.println("\nCurrent circle:");
+        c.print();
+        System.out.print("\nEnter how you want to move the circle:\nx move: ");
+        double xm = in.nextDouble();
+        System.out.print("\ny move: ");
+        double ym = in.nextDouble();
+        c.move(xm, ym);
+        System.out.println("Now circle is moved:");
+        c.print();
+        System.out.print("Enter another circle:\nx2: ");
+        double x2 = in.nextDouble();
+        System.out.print("y2: ");
+        double y2 = in.nextDouble();
+        System.out.print("Enter r2 radius: ");
+        double r2 = in.nextDouble();
+
+        Circle c2 = new Circle(x2, y2, r2);
+        double dist = c2.distToOtherCircle(c);
+        System.out.println("\nDistance between two circles: " + dist);
+        System.out.print("Enter the new radius for the first circle: ");
+        double rn = in.nextDouble();
+        c.changeRadius(rn);
+        System.out.println("\nNow circle is:");
+        c.print();
+
+        double p = c.getPerimeter();
+        double s = c.getSqr();
+
+        System.out.println("Perimeter is: " + p + "\nSquare is: " + s);
+    }
+}
