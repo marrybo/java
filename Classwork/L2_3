@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+class A {
+    public void count(int a, int b){
+        System.out.println("Сумма чисел: "+(a+b));
+    }
+    void show(){
+        System.out.println("A\n");
+    }
+}
+class B extends A {
+    public void count(int a, int b){
+        System.out.println("Разность чисел: "+(a-b));
+    }
+    @Override
+    void show(){
+        System.out.println("B\n");
+    }
+}
+class C extends A{
+    public void count(int a, int b){
+        System.out.println("Произведение чисел: "+(a*b));
+    }
+    @Override
+    void show(){
+        System.out.println("C\n");
+    }
+}
+class D extends B{
+    public void count(int a, int b){
+        System.out.println("Частное чисел: "+(a/b));
+    }
+    @Override
+    void show(){
+        System.out.println("D\n");
+    }
+}
+class New {
+    public static void main(String[] args) {
+        A first = new A();
+        B second = new B();
+        C third = new C();
+        D fourth = new D();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите a:");
+        int a = sc.nextInt();
+        System.out.println("Введите b:");
+        int b = sc.nextInt();
+
+        first.count(a, b);
+        first.show();
+
+        second.count(a, b);
+        second.show();
+
+        third.count(a, b);
+        third.show();
+
+        fourth.count(a, b);
+        fourth.show();
+    }
+}
