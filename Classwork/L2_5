@@ -1,0 +1,45 @@
+import java.util.Scanner;
+class MathUtils {
+    public static double Fact(int c){
+        int fact = 1;
+        for (int a = 1; a <= c; a++) {
+            fact *= a;
+        }
+        return fact;
+    }
+    public static double Sum(double a, double b){
+        return a+b;
+    }
+    public static double Mul(double a,double b){
+        return a*b;
+    }
+    public static double Div(double a,double b){
+        return a/b;
+    }
+    public static double Sub(double a,double b){
+        return a-b;
+    }
+    public static double Pow(double a, double b){
+        for (int i=1;i<=b;i++){
+            a*=a;
+        }
+        return a;
+    }
+}
+class hello {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите два числа: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        System.out.println(a + "+" + b + "=" + MathUtils.Sum(a, b));
+        System.out.println(a + "-" + b + "=" + MathUtils.Sub(a, b));
+        System.out.println(a + "*" + b + "=" + MathUtils.Mul(a, b));
+        System.out.println(a + "/" + b + "=" + MathUtils.Div(a, b));
+        System.out.println(a + "^" + b + "=" + MathUtils.Pow(a, b));
+
+        System.out.print("Факториал: ");
+        int c = sc.nextInt();
+        System.out.println(c + "!" + " = " + MathUtils.Fact(c));
+    }
+}
