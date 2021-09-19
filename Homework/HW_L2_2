@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class HW2_2 {
+    public static class A {
+        private double a;
+        private double b;
+        private double c;
+
+        public double setA(double a) {
+            this.a = a;
+        }
+
+        public double setB(double b) {
+            this.b = b;
+        }
+
+        public double setC(double c) {
+            this.c = c;
+        }
+
+        public double getA(double a) {
+            return a;
+        }
+
+        public double getB(double b) {
+            return b;
+        }
+
+        public double getC(double c) {
+            return c;
+        }
+
+        public void Par(double a, double b, double c) {
+            setA(a);
+            setB(b);
+            setC(c);
+        }
+        public double getVolume(double a, double b, double c) {
+            return a.ParA() * b.ParB() * c.ParC();
+        }
+
+        public double getSqr(double a, double b, double c) {
+            return 2 * (a.ParA() * b.ParB() + b.ParB() * c.ParC() + c.ParC() * a.ParA());
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите a:");
+        double a = sc.nextDouble();
+        System.out.print("Введите b:");
+        double b = sc.nextDouble();
+        System.out.print("Введите c:");
+        double c = sc.nextDouble();
+
+        Par p = new Par(a, b, c);
+
+        System.out.println("Обьем: " + Par.getVolume(par) + "\nПлощадь: " + Par.getSqr(par));
+    }
+}
