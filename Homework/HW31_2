@@ -1,0 +1,21 @@
+public class HW4_2 {
+        public static void main(String[] args) {
+            long beginningTime = System.currentTimeMillis();
+            String str = "1";
+            for (int i=0; i <=20000; i++) {
+                str += "0";
+            }
+            long endTime = System.currentTimeMillis();
+            long time =  endTime - beginningTime;
+            System.out.println("Время выполнения: " + time);
+            beginningTime = System.currentTimeMillis();
+            StringBuilder newStr = new StringBuilder();
+            for (int j=0; j <=20000; j++) {
+                newStr.append("2");
+            }
+            endTime = System.currentTimeMillis();
+            long SBTime = endTime - beginningTime;
+            System.out.println("Время выполнения со StringBuilder: " + SBTime);
+            System.out.println("Обычная конкатинация дольше StringBuilder на "+(time-SBTime));
+        }
+    }
