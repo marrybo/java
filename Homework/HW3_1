@@ -1,0 +1,77 @@
+public class HW3_1 {
+    interface ArithmeticOperations {
+        default void add(Numb n){};
+        default void sub(Numb n){};
+        default void mult(Numb n){};
+        default void div(Numb n){}
+    }
+    static class Numb implements ArithmeticOperations{
+        double a;
+        double b;
+        Numb(double a, double b){
+            this.a=a;
+            this.b=b;
+        }
+        public void add(Numb n) {
+            System.out.println(n.a + n.b);
+        }
+        public void sub(Numb n) {
+            System.out.println(n.a - n.b);
+        }
+        public void mult(Numb n) {
+            System.out.println(n.a * n.b);
+        }
+        public void div(Numb n) {
+            System.out.println(n.a / n.b);
+        }
+    }
+    static class ComplexNumb implements ArithmeticOperations{
+        int a;
+        int b;
+
+        public ComplexNumb(int a, int b) {
+            this.a=a;
+            this.b=b;
+        }
+
+        public ComplexNumb() {
+        }
+
+        public String toString(){
+            return a+"+"+b+"j";
+        }
+        public void add(ComplexNumb n1, ComplexNumb n2) {
+            ComplexNumb comp = new ComplexNumb(n1.a + n2.a, n1.b + n2.b);
+            System.out.println(comp);
+        }
+        public void sub(ComplexNumb n1, ComplexNumb n2) {
+            ComplexNumb comp = new ComplexNumb(n1.a - n2.a, n1.b - n2.b);
+            System.out.println(comp);
+        }
+        public void mult(ComplexNumb n1, ComplexNumb n2) {
+            int a1 = n1.a, b1 = n1.b, a2 = n2.a, b2 = n2.b;
+            ComplexNumb comp = new ComplexNumb(a1 * a2 , b1 * b2);
+            System.out.println(comp);
+        }
+        public void div(ComplexNumb n1, ComplexNumb n2) {
+            int a1 = n1.a, b1 = n1.b, a2 = n2.a, b2 = n2.b;
+            ComplexNumb comp = new ComplexNumb(a1 / a2 , b1 / b2);
+            System.out.println(comp);
+        }
+    }
+
+    public static void main(String[] args) {
+        Numb n = new Numb(1, 2);
+        System.out.println(n.a+"-"+n.b+"=");
+        n.add(n);
+        System.out.println(n.a+"/"+n.b+"=");
+        n.div(n);
+
+        ComplexNumb n1 = new ComplexNumb(1, 2);
+        ComplexNumb n2 = new ComplexNumb(3, 4);
+
+        ComplexNumb comp = new ComplexNumb();
+        System.out.println("("+n1+")+("+n2+")");
+        comp.add(n1, n2);
+    }
+}
