@@ -1,0 +1,31 @@
+
+import java.math.BigInteger;
+
+    public class HW6_1 extends Thread {
+        int numb = 0;
+
+        @Override
+        public void run() {
+            long START = System.currentTimeMillis();
+            for (int i = 3000000; i <= 6000000; i++) {
+                boolean result;
+                BigInteger bInt = BigInteger.valueOf(i);
+                result = bInt.isProbablePrime((int) Math.log(i));
+                if (result) {
+                    numb++;
+                }
+            }
+
+            long timeSpent = System.currentTimeMillis() - START;
+
+            System.out.println("\tКоличество простых чисел: " + numb);
+            System.out.println("\tВремя работы программы: " + timeSpent + " [мс]");
+        }
+    }
+
+class Main {
+    public static void main(String[] args) {
+        Thread t = new HW6_1();
+        t.start();
+    }
+}
