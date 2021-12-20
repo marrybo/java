@@ -1,0 +1,61 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Planet {
+    private double distanceToSun;
+    private double mass;
+    private double diameter;
+
+    Planet(double a, double b, double c) {
+        this.distanceToSun = a;
+        this.mass = b;
+        this.diameter = c;
+    }
+
+    double getDistanceToSun() {
+        return distanceToSun;
+    }
+    double getMass() {
+        return mass;
+    }
+    double getDiameter() {
+        return diameter;
+    }
+    void setDistanceToSun(double a) {
+        this.distanceToSun = mass;
+    }
+    void setMass(double b) {
+        this.mass = b;
+    }
+    void setDiameter(double c) {
+        this.diameter = c;
+    }
+}
+public class HW4_1 {
+    public static void main(String[] args) {
+        boolean check = false;
+        Map<String,Planet> planets = new HashMap<>();
+        planets.put("Земля", new Planet(1, 1, 1));
+        planets.put("Венера", new Planet(2, 2, 2));
+        
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите название планеты, чтобы получить о ней информацию: ");
+        String newPlanet = sc.nextLine();
+
+
+        for (String key : planets.keySet()) {
+            if (newPlanet.equals(key)) {
+                check = true;
+                System.out.println("Вы ввели планету: " + key);
+                System.out.println("Дистанция до солнца: " + planets.get(key).getDistanceToSun() );
+                System.out.println("Масса: " + planets.get(key).getMass());
+                System.out.println("Диаметр: " + planets.get(key).getDiameter());
+            }
+        }
+        if (!check){
+            System.out.println("Такой планеты нет в списке");
+        }
+    }
+}
