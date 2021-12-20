@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class HW4_2{
+    public static void main(String[] args) {
+
+        Map<String, ArrayList<Integer>> planets = new HashMap<String, ArrayList<Integer>>();
+
+        ArrayList<Integer> Venus = new ArrayList();
+        Venus.add(1);
+        Venus.add(1);
+        Venus.add(1);
+        planets.put("Венера", Venus);
+
+        ArrayList<Integer> Earth = new ArrayList();
+        Earth.add(2);
+        Earth.add(2);
+        Earth.add(2);
+        planets.put("Земля", Earth);
+
+        System.out.println("Название планеты:");
+        Scanner scanner = new Scanner(System.in);
+        String Keys = scanner.next();
+
+        if (planets.containsKey(Keys)) {
+            System.out.println("Расстояние до Солнца : " + planets.get(Keys).get(0));
+            System.out.println("Масса : " + planets.get(Keys).get(1));
+            System.out.println("Диаметр : " + planets.get(Keys).get(2));
+
+        } else {
+            System.out.println("Данной планеты нет в списке");
+        }
+    }
+}
